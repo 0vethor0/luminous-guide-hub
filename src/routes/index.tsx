@@ -4,19 +4,17 @@ import {
   Bug,
   Search,
   FileText,
-  ListChecks,
-  Camera,
-  Tag,
+  ClipboardList,
   Send,
   MessageSquare,
   Github,
-  Sparkles,
   ArrowRight,
   CheckCircle2,
-  AlertTriangle,
+  LayoutTemplate,
 } from "lucide-react";
 import { InfiniteGrid } from "@/components/ui/the-infinite-grid";
 import { BugStep } from "@/components/BugStep";
+import { IssueTemplates } from "@/components/IssueTemplates";
 
 const REPO_URL = "https://github.com/0vethor0/BUMI";
 const ISSUES_URL = `${REPO_URL}/issues/new`;
@@ -26,18 +24,18 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Reportar un Bug · Guía paso a paso para BUMI",
+        title: "Colabora en BUMI · Guía con GitHub Issue Forms",
       },
       {
         name: "description",
         content:
-          "Aprende a reportar bugs en el repositorio BUMI siguiendo las mejores prácticas de GitHub: pasos claros, plantillas y consejos.",
+          "Reporta bugs, solicita features y mejora la documentación de BUMI usando nuestros formularios automatizados de GitHub (Issue Forms).",
       },
-      { property: "og:title", content: "Reportar un Bug · BUMI" },
+      { property: "og:title", content: "Colabora en BUMI como un profesional" },
       {
         property: "og:description",
         content:
-          "Guía visual y moderna para crear issues efectivos en GitHub siguiendo los estándares oficiales.",
+          "Guía moderna para usar los Issue Forms de BUMI: 4 pasos clave y 4 plantillas listas para colaborar.",
       },
     ],
   }),
@@ -46,99 +44,47 @@ export const Route = createFileRoute("/")({
 const steps = [
   {
     icon: Search,
-    title: "Busca antes de reportar",
+    title: "Busca duplicados",
     description:
-      "Antes de crear un nuevo issue, revisa los existentes (abiertos y cerrados) para evitar duplicados. GitHub recomienda buscar por palabras clave del error.",
+      "Antes de abrir un nuevo issue, revisa los existentes (abiertos y cerrados) para evitar duplicados y aportar contexto donde ya se está discutiendo.",
     bullets: [
       "Usa la barra de búsqueda en la pestaña Issues",
-      "Filtra por etiquetas como 'bug' o 'help wanted'",
-      "Si ya existe, añade un comentario con tu información",
+      "Filtra por etiquetas como 'bug', 'feature' o 'docs'",
+      "Si ya existe, suma tu información en un comentario",
     ],
   },
   {
-    icon: FileText,
+    icon: LayoutTemplate,
     title: "Elige la plantilla correcta",
     description:
-      "BUMI puede ofrecer plantillas de issue. Selecciona 'Bug report' para errores. Las plantillas guían los datos requeridos.",
+      "BUMI ofrece Issue Forms para cada tipo de aporte. Elige la plantilla adecuada directamente en la interfaz de GitHub.",
     bullets: [
-      "Bug report: para errores del software",
-      "Feature request: para nuevas funcionalidades",
-      "Question: para dudas generales",
+      "🐞 Bug Report — para errores reproducibles",
+      "🚀 Feature Request — para nuevas funcionalidades",
+      "📖 Documentación — para mejorar manuales o README",
+      "💬 Reporte General — para dudas o temas abiertos",
     ],
   },
   {
-    icon: Tag,
-    title: "Escribe un título claro y específico",
+    icon: ClipboardList,
+    title: "Completa el formulario",
     description:
-      "Un buen título resume el problema en una línea. Empieza con el área afectada y describe el síntoma observable.",
+      "Los Issue Forms te guían paso a paso. Solo necesitas llenar los campos obligatorios, elegir opciones en los menús desplegables y describir el contexto.",
     bullets: [
-      "✅ '[UI] Botón de login no responde en Safari 17'",
-      "❌ 'No funciona' o 'Bug urgente'",
-    ],
-  },
-  {
-    icon: ListChecks,
-    title: "Describe los pasos para reproducir",
-    description:
-      "Lista numerada y en orden de cómo llegar al error. Este es el dato más valioso para quien va a corregirlo.",
-    bullets: [
-      "1. Ir a '...'",
-      "2. Hacer clic en '...'",
-      "3. Desplazarse hasta '...'",
-      "4. Ver el error",
-    ],
-  },
-  {
-    icon: AlertTriangle,
-    title: "Comportamiento esperado vs actual",
-    description:
-      "Explica qué debería suceder y qué sucede en realidad. Esta separación ayuda a confirmar el bug rápidamente.",
-    bullets: [
-      "Esperado: 'Al pulsar Guardar, el formulario se envía'",
-      "Actual: 'Aparece un error 500 en consola'",
-    ],
-  },
-  {
-    icon: Camera,
-    title: "Adjunta capturas, logs o vídeos",
-    description:
-      "Los recursos visuales aceleran el diagnóstico. GitHub permite arrastrar imágenes y vídeos directamente al editor.",
-    bullets: [
-      "Capturas de pantalla del error",
-      "Logs de consola o stack traces dentro de bloques ```",
-      "GIFs cortos si el bug es interactivo",
-    ],
-  },
-  {
-    icon: Bug,
-    title: "Incluye información del entorno",
-    description:
-      "El contexto técnico es esencial para reproducir. Sé lo más preciso posible con versiones y plataformas.",
-    bullets: [
-      "Sistema operativo y versión",
-      "Navegador / runtime y versión",
-      "Versión de BUMI o commit hash",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Aplica labels y asignaciones",
-    description:
-      "Si tienes permisos, añade labels relevantes (bug, priority, area). Si no, los maintainers lo harán por ti.",
-    bullets: [
-      "Etiqueta 'bug' para errores confirmados",
-      "Menciona @ a personas relacionadas si procede",
+      "Rellena los campos marcados como obligatorios",
+      "Selecciona valores en los dropdowns (entorno, prioridad…)",
+      "Adjunta capturas, logs o enlaces relevantes",
     ],
   },
   {
     icon: Send,
-    title: "Envía y mantente disponible",
+    title: "Envía y colabora",
     description:
-      "Pulsa 'Submit new issue'. Mantente atento a comentarios: pueden pedirte aclaraciones o pasos adicionales.",
+      "Pulsa 'Submit new issue'. Las etiquetas se aplican automáticamente y los maintainers podrán contactarte para coordinar la solución.",
     bullets: [
-      "Activa las notificaciones del issue",
-      "Responde con prontitud a las preguntas",
-      "Cierra el issue si encuentras una solución por tu cuenta",
+      "Atento a labels automáticas (bug, feature, docs…)",
+      "Responde con prontitud a comentarios y preguntas",
+      "Cierra el issue si encuentras la solución por tu cuenta",
     ],
   },
 ];
