@@ -186,56 +186,33 @@ function Index() {
         </div>
       </section>
 
-      {/* Template section */}
+      {/* Issue Forms templates */}
       <section className="relative px-4 py-24">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="glass-card rounded-3xl p-8 md:p-12"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-button flex items-center justify-center text-primary-foreground">
-                <FileText className="w-6 h-6" />
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--brand-mint)]/60 text-[var(--brand-deep)] text-xs font-semibold mb-4">
+                <FileText className="w-3.5 h-3.5" />
+                Issue Forms · YAML
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Bonus</p>
-                <h3 className="text-2xl font-bold">
-                  Plantilla recomendada de Bug Report
-                </h3>
-              </div>
+              <h3 className="text-3xl md:text-4xl font-extrabold mb-3">
+                Conoce nuestras{" "}
+                <span className="text-gradient">Plantillas</span>
+              </h3>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Cuatro formularios automatizados que te guían para enviar
+                aportes claros, completos y útiles desde el primer intento.
+              </p>
             </div>
 
-            <pre className="bg-white/80 border border-[var(--brand-mint)] rounded-2xl p-6 text-sm overflow-x-auto leading-relaxed text-foreground/90 font-mono">
-{`### 🐛 Descripción
-Una descripción clara y concisa del bug.
+            <IssueTemplates />
 
-### ✅ Pasos para reproducir
-1. Ir a '...'
-2. Hacer clic en '...'
-3. Ver el error
-
-### 🎯 Comportamiento esperado
-Lo que debería ocurrir.
-
-### 💥 Comportamiento actual
-Lo que realmente ocurre.
-
-### 🖼️ Capturas / Logs
-(Adjunta imágenes o pega los logs aquí)
-
-### 🧩 Entorno
-- SO: [ej. macOS 14.2]
-- Navegador: [ej. Chrome 124]
-- Versión BUMI: [ej. v0.3.1 / commit abc123]
-
-### ➕ Contexto adicional
-Cualquier otra información relevante.`}
-            </pre>
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
               <a
                 href={ISSUES_URL}
                 target="_blank"
