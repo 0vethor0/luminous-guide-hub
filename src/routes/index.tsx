@@ -111,14 +111,15 @@ function Index() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-            Reporta un <span className="text-gradient">bug</span>
+            Colabora en <span className="text-gradient">BUMI</span>
             <br />
             como un profesional
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Aprende paso a paso cómo crear issues efectivos en GitHub siguiendo
-            las indicaciones oficiales. Bugs claros = soluciones rápidas.
+            Aprende a reportar errores, solicitar funcionalidades y mejorar la
+            documentación utilizando nuestros nuevos formularios automatizados
+            de GitHub.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -136,22 +137,22 @@ function Index() {
               href="#guia"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl glass-card text-foreground font-semibold hover:-translate-y-0.5 transition-all duration-300"
             >
-              Ver guía completa
+              Ver guía
             </a>
           </div>
 
-          <div className="mt-16 flex items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--brand-deep)]" />
-              9 pasos claros
+              4 pasos clave
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--brand-deep)]" />
-              Estándares GitHub
+              Issue Forms automatizados
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[var(--brand-deep)]" />
-              Plantilla incluida
+              4 plantillas listas
             </div>
           </div>
         </motion.div>
@@ -168,12 +169,12 @@ function Index() {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-extrabold mb-4"
             >
-              La guía completa en{" "}
-              <span className="text-gradient">9 pasos</span>
+              Un flujo moderno en{" "}
+              <span className="text-gradient">4 pasos clave</span>
             </motion.h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Sigue cada paso para que tu reporte sea claro, accionable y útil
-              para los maintainers de BUMI.
+              Los Issue Forms hacen la mayor parte del trabajo. Tú solo tienes
+              que seguir estos cuatro pasos para colaborar como un profesional.
             </p>
           </div>
 
